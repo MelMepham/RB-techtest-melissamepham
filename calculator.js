@@ -2,20 +2,25 @@ var fs = require('fs')
 
 module.exports = {
   calculator,
-  artistMarkup
+  itemPrice
 }
 
 function calculator(cart, base) {
-
-  artistMarkup(cart, base)
-  console.log()
+  for (i = 0; i < base.length; i++) {
+    if (cart[i]['product-type'] === base[i]['product-type'] || cart[i].options == base[i].options) {
+      let basePrice = base[i]['base-price']
+      let artistMarkup = cart[i]['artist-markup']
+      let quantity = cart[i].quantity
+      itemPrice(basePrice, artistMarkup, quantity)
+      break;
+     }
+  }
 }
 
-function artistMarkup(cart, base) {
-  console.log("artistMarkup")
-  let basePrice = base[0]['base-price']
-  let artistMarkup = cart[0]['artist-markup']
+function itemPrice(basePrice, artistMarkup, quantity) {
+  console.log("itemPrice")
+  console.log((basePrice / 100 * artistMarkup + basePrice) * quantity)
   return (
-    basePrice / 100 * artistMarkup + basePrice
+    (basePrice / 100 * artistMarkup + basePrice) * quantity
   )
 }

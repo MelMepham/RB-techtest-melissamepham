@@ -9,7 +9,7 @@ const calculator = require('../calculator')
 
 
 
-test('test markup with percentage', function () {
+test('item price uses base-price and artist-markup', function () {
   const cart = [
     {
       "product-type": "hoodie",
@@ -32,6 +32,6 @@ test('test markup with percentage', function () {
       "base-price": 3800
     }
   ]
-  const total = calculator.artistMarkup(cart, base)
+  const total = calculator.itemPrice(cart, base)
   expect(total).toBe(4560)
 })
