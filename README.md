@@ -1,4 +1,6 @@
-# draftRB
+# RedBubble I love you
+
+Welcome to my RedBubble CLI cart!
 
 in the console download dependencies by writing in your CLI ```yarn```
 
