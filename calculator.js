@@ -6,8 +6,6 @@ module.exports = {
 }
 
 function calculator(cart, base) {
-  cart = JSON.parse(cart)
-  base = JSON.parse(base)
 
   artistMarkup(cart, base)
   console.log()

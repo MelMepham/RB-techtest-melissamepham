@@ -32,6 +32,6 @@ test('test markup with percentage', function () {
       "base-price": 3800
     }
   ]
-  const total = calculator.calculator(cart, base)
+  const total = calculator.artistMarkup(cart, base)
   expect(total).toBe(4560)
 })
