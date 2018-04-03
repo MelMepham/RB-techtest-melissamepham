@@ -1,4 +1,4 @@
-# RedBubble I love you
+# RedBubble I Love You <3 <3
 
 Welcome to my RedBubble CLI cart!
 
