@@ -1,4 +1,7 @@
-var menu = require('./menu')
+var calculator = require('./calculator')
 
-console.log('Hello ')
-menu.main()
+'use strict';
+
+console.log("Welcome to the calculator")
+
+calculator.input()
