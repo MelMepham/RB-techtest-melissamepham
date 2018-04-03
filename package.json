@@ -1,0 +1,20 @@
+{
+  "name": "mmRB",
+  "version": "1.0.0",
+  "description": "redbubble tech homework",
+  "main": "index.js",
+  "scripts": {
+  "start": "node index",
+  "test": "jest --watch"
+},
+  "repository": "https://github.com/MelMepham/draftRB.git",
+  "author": "Melissa Mepham <m.a.mepham@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^22.4.3",
+    "nodemon": "^1.17.3",
+    "readdir": "^0.0.13",
+    "prompt": "^1.0.0"
+
+  }
+}

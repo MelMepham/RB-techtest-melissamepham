@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+      "properties": {
+        "product-type": {
+          "type": "string"
+        },
+        "options": {
+          "type": "object",
+          "description": "Key-value pairs of strings."
+        },
+        "artist-markup": {
+          "type": "integer",
+          "description": "The artist markup in percent, for example 20 represents a 20% markup."
+        },
+        "quantity": {
+          "type": "integer",
+          "description": "The quantity of this item."
+        }
+      },
+      "required": [
+        "product-type",
+        "options",
+        "artist-markup",
+        "quantity"
+      ]
+  }
+}
