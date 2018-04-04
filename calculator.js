@@ -6,14 +6,21 @@ const cart = JSON.parse(fs.readFileSync('./data/cart.json', 'utf8'))
 // module.exports = {
 //   calculator,
 // }
-console.log(base)
 const output = base
   .reduce((typesWithPrices, base) => {
     typesWithPrices[base['product-type']] = typesWithPrices[base['product-type']] || [];
-    typesWithPrices[base['product-type']].push({
-      [base.options.colour + base.options.size]: base['base-price']
-    });
+    typesWithPrices[base['product-type']].push(
+      printTitles(base)
+    );
     return typesWithPrices
   }, {})
+
+  function printTitles(base) {
+    let productName = base['product-type']
+    let colour = base.options.colour
+    let size = base.options.size
+
+    return {[(productName ? productName : '') + (colour ? colour : '') + (size ? size : '')]: base['base-price']}
+  }
 
 console.log(JSON.stringify(output, null, 2))
