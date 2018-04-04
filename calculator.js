@@ -1,39 +1,29 @@
 var fs = require('fs')
 
-module.exports = {
-  individualItemPrice,
-  findMatches
+const base = JSON.parse(fs.readFileSync('./data/basePrices.json', 'utf8'))
+const cart = JSON.parse(fs.readFileSync('./data/cart.json', 'utf8'))
+
+// module.exports = {
+//   calculator,
+// }
+
+function priceObject(base) {
+  const output = base
+  .reduce((typesWithPrices, base) => {
+    typesWithPrices[base['product-type']] = typesWithPrices[base['product-type']] || [];
+    typesWithPrices[base['product-type']].push(
+      printTitles(base)
+    );
+    return typesWithPrices
+  }, {})
+  console.log(JSON.stringify(output, null, 2))
 }
 
-function findMatches(cart, base) {
-  for (i = 0; i <cart.length; i++) {
-    const matches = base.filter((stock, index) => {
-      if (stock['product-type'] === cart[i]['product-type']) {
-        if (stock['product-type'] === "hoodie" && (stock.options.colour == cart[i].options.colour)){
-          if (stock.options.size[i] == cart[i].options.size) {
-            individualItemPrice(stock, cart[i])
-          }
-        } else if (stock['product-type'] != "hoodie"){
-          if (stock.options.size == cart[i].options.size){
-            individualItemPrice(stock, cart[i])
-          }
-        }
-      }
-    })
+  function printTitles(base) {
+    let productName = base['product-type']
+    let colour = base.options.colour
+    let size = base.options.size
+    return {[(productName ? productName : '') + (colour ? colour : '') + (size ? size : '')]: base['base-price']}
   }
-}
 
-
-function individualItemPrice (base, cart) {
-      let basePrice = base['base-price'];
-      let artistMarkup = cart['artist-markup'];
-      let quantity = cart.quantity;
-      let name = base['product-type']
-
-      let pluralise = (name, quantity) => quantity > 1 ? (name + "s") : name
-
-      let total = Math.round((basePrice / 100 * artistMarkup + basePrice) * quantity);
-      return (
-        console.log(quantity + " " + pluralise(name, quantity) + " = " + total)
-      )
-}
+priceObject(base)
