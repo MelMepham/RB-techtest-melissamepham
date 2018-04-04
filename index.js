@@ -12,4 +12,4 @@ base = JSON.parse(base)
 // var base = JSON.parse(args[1]);
 console.log("Welcome to the calculator")
 
-calculator.calculator(cart, base)
+calculator.findMatches(cart, base)
