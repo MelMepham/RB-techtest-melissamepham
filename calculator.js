@@ -2,25 +2,39 @@ var fs = require('fs')
 
 module.exports = {
   calculator,
-  itemPrice
 }
 
 function calculator(cart, base) {
-  for (i = 0; i < base.length; i++) {
-    if (cart[i]['product-type'] === base[i]['product-type'] || cart[i].options == base[i].options) {
-      let basePrice = base[i]['base-price']
-      let artistMarkup = cart[i]['artist-markup']
-      let quantity = cart[i].quantity
-      itemPrice(basePrice, artistMarkup, quantity)
-      break;
-     }
+  for (i = 0; i <cart.length; i++) {
+    const matches = base.filter((stock, index) => {
+      if (stock['product-type'] === cart[i]['product-type']) {
+        if (stock['product-type'] === "hoodie" && (stock.options.colour == cart[i].options.colour)){
+          if (stock.options.size[i] == cart[i].options.size) {
+            individualItemPrice(stock, cart[i])
+          }
+        } else if (stock['product-type'] != "hoodie"){
+          if (stock.options.size == cart[i].options.size){
+              individualItemPrice(stock, cart[i])
+          }
+        }
+        }
+
+          // if (items.s === base.options.size) {
+          //   console.log("cart", base[i])
+          // }
+
+        // console.log(cart[i].options.size == stock.options.size)
+        // console.log(stock.options.size)
+        // if (stock.options.size == cart[i].options.size) {
+        // }
+
+    })
   }
 }
 
-function itemPrice(basePrice, artistMarkup, quantity) {
-  console.log("itemPrice")
-  console.log((basePrice / 100 * artistMarkup + basePrice) * quantity)
-  return (
-    (basePrice / 100 * artistMarkup + basePrice) * quantity
-  )
+function individualItemPrice (stock, cart) {
+      let basePrice = stock['base-price']
+      let artistMarkup = cart['artist-markup']
+      let quantity = cart.quantity
+      console.log(cart.quantity + " " + stock['product-type'] + " = " + (basePrice / 100 * artistMarkup + basePrice) * quantity)
 }
