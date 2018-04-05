@@ -5,7 +5,7 @@ module.exports = {
   fillObjects,
   combineTwo,
   combineOne,
-  noOptions
+  combineWithNoOptions
 }
 
 function priceObject(data) {
@@ -15,63 +15,61 @@ function priceObject(data) {
     return typesWithPrices
   }, {})
   fillObjects(data, output)
-  const hoodie = output.hoodie.reduce((hoodieObject, value) => {
-    return {...hoodieObject, ...value}
-  }, {})
-  const sticker = output.sticker.reduce((stickerObject, value) => {
-    return {...stickerObject, ...value}
-  }, {})
-  const leggings = output.leggings.reduce((leggingsObject, value) => {
-    return {...leggingsObject, ...value}
-  }, {})
-
-  output.hoodie = hoodie
-  output.sticker = sticker
-  output.leggings = leggings
-
+  simplifyingObjects(output)
 return output
+}
+
+function simplifyingObjects(output) {
+  var name = ['hoodie', 'sticker', 'leggings']
+  name.forEach((item, i) => {
+    output[item] = output[item].reduce((object, value) => {
+      return {...object, ...value}
+    },{})
+  })
 }
 
 function fillObjects(data, object) {
   let options = data['options']
   let obj = object
+
   data.forEach(item => {
     let colour = item.options.colour
     let size = item.options.size
     let price = item['base-price']
+
     if (Object.keys(item.options).length === 2){
       let arr = combineTwo(data, price, size, colour)
-      obj.hoodie.push(arr)
+      obj[item['product-type']].push(arr)
     } else if (Object.keys(item.options).length === 1){
       let arr = combineOne(data, price, size)
-      obj.sticker.push(arr)
+      obj[item['product-type']].push(arr)
     } else {
-      let arr = noOptions(data, price)
-      obj.leggings.push(arr)
+      let arr = combineWithNoOptions(data, price)
+      obj[item['product-type']].push(arr)
     }
   })
 }
 
 function combineTwo(data, basePrice, array1, array2) {
-  let priceObjectHoodie = {}
+  let obj = {}
     array1.forEach((element1) => {
       array2.forEach((element2) => {
-        priceObjectHoodie[element1 + element2] = basePrice
+        obj[element1 + element2] = basePrice
       })
     })
-    return priceObjectHoodie
+    return obj
 }
 
 function combineOne(data, basePrice, array1) {
-  let priceObjectSticker = {}
+  let obj = {}
     array1.forEach((element1) => {
-        priceObjectSticker[element1] = basePrice;
+        obj[element1] = basePrice;
       })
-    return priceObjectSticker
+    return obj
 }
 
-function noOptions(data, basePrice) {
-  let priceObjectSticker = {}
-        priceObjectSticker[""] = basePrice;
-    return priceObjectSticker
+function combineWithNoOptions(data, basePrice) {
+  let obj = {}
+        obj[""] = basePrice;
+    return obj
 }
