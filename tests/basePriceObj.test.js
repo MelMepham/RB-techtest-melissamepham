@@ -40,5 +40,10 @@ test('fillObjects fills the initial Object', function () {
     let data = basePrices
     let object = { hoodie: [], sticker: [], leggings: [] }
     const fillObject = objectCreation.fillObjects(data, object)
-    expect(Object.keys(object).length).toEqual(3)
+    const expectedKeys = ['hoodie', 'sticker', 'leggings']
+    expectedKeys.forEach(key => expect(fillObject.hasOwnProperty(key)).toBeTruthy())
+
+    const hoodieLength = 5
+    console.log(fillObject['hoodie'])
+    expect(fillObject['hoodie']).toHaveLength(hoodieLength)
   })
