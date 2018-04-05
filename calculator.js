@@ -31,10 +31,10 @@ function totalCart(items, cart) {
   var add = (a, b) => a + b;
   var individualPrice = []
   items.forEach((productCost, i) => {
-    let artistMarkup = cart[i]['artist-markup'] / 100
+    let artistMarkup = (cart[i]['artist-markup'] / 100) * productCost
     individualPrice.push((productCost + Math.round(artistMarkup)) * cart[i].quantity)
   })
   let totalArray = individualPrice.reduce(add, 0)
-  console.log("cart total: ", totalArray)
+  console.log(totalArray)
   return totalArray
 }
