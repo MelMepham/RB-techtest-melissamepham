@@ -45,7 +45,7 @@ function fillObjects(data, object) {
       let arr = combineOne(data, price, size)
       obj[item['product-type']].push(arr)
     } else {
-      let arr = noOptions(data, price)
+      let arr = combineWithNoOptions(data, price)
       obj[item['product-type']].push(arr)
     }
   })
@@ -69,7 +69,7 @@ function combineOne(data, basePrice, array1) {
     return obj
 }
 
-function noOptions(data, basePrice) {
+function combineWithNoOptions(data, basePrice) {
   let obj = {}
         obj[""] = basePrice;
     return obj

@@ -2,9 +2,9 @@ const fs = require('fs')
 const basePriceObj = require('./basePriceObj.js')
 
 module.exports = {
-  calculator: calculator,
-  findMatch: findMatch,
-  totalCart: totalCart
+  calculator,
+  findMatch,
+  totalCart
 }
 
 function calculator(base, cart) {
