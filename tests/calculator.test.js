@@ -25,12 +25,15 @@ let base =  { hoodie:
             {   '': 5000 }
           }
 
-
+test('test setup working', function () {
+    expect(true).toBeTruthy()
+})
 
 test('calculator imports the base object', function () {
     const testCalculator = calculator.calculator(basePrices, cart)
     expect(testCalculator).toEqual(base)
   })
+
 
 test('calculator finds base prices', function () {
     const itemToFind = calculator.findMatch(base, cart)
