@@ -1,7 +1,8 @@
 const fs = require('fs')
 
 const calculator = require('../calculator')
-
+let basePrices = JSON.parse(fs.readFileSync('./data/basePrices.json', 'utf8'))
+let cart = JSON.parse(fs.readFileSync('./data/cart.json', 'utf8'))
 let base =  { hoodie:
             {   smallwhite: 3800,
                 smalldark: 3800,
@@ -24,14 +25,12 @@ let base =  { hoodie:
             {   '': 5000 }
           }
 
-let cart = JSON.parse(fs.readFileSync('./data/cart.json', 'utf8'))
 
-// test('calculator imports the base object', function () {
-//     const testCalculator = calculator.calculator(base)
-//     let basePrice = base
-//     console.log(itemToFind)
-//     expect(calculator).toBe(object)
-//   })
+
+test('calculator imports the base object', function () {
+    const testCalculator = calculator.calculator(basePrices, cart)
+    expect(testCalculator).toEqual(base)
+  })
 
 test('calculator finds base prices', function () {
     const itemToFind = calculator.findMatch(base, cart)
@@ -42,5 +41,5 @@ test('calculator finds base prices', function () {
 test('totalCart adds up the cart.', function () {
     let items = [ 4368, 5000 ]
     const totalArray = calculator.totalCart(items, cart)
-    expect(totalArray).toBe(13736)
+    expect(totalArray).toBe(15984)
   })

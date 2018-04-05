@@ -32,9 +32,9 @@ function fillObjects(data, object) {
   let options = data['options']
   let obj = object
 
-  data.forEach(item => {
-    let colour = item.options.colour
+  data.forEach((item) => {
     let size = item.options.size
+    let colour = item.options.colour
     let price = item['base-price']
 
     if (Object.keys(item.options).length === 2){

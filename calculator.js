@@ -10,6 +10,7 @@ module.exports = {
 function calculator(base, cart) {
   let basePrice = basePriceObj.priceObject(base)
   findMatch(basePrice, cart)
+  return basePrice
 }
 
 function findMatch(base, cart) {
