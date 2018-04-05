@@ -1,8 +1,9 @@
 # RedBubble I Love You <3 <3
 ### Thanks for the challenge!
+It's been such a great learning experience I secretly want to go to all the tech companies and ask them to send me their tech homework just so I have some dynamic challenges to solve!
 
 ## Title & Description
-Hello RedBubble team, I have created a CLI program that takes two arguments and will calculate the amount of items and the price of your cart.
+Hello RedBubble team, I have created for you a CLI program that takes two arguments, the first is a baseCart.json, my program with consume this and create an object that can be referenced so when the cart object as the second argument it will go into the new object I have created and calculate up the cart with a lovely bit of math that was kindly given to me by your team. 
 
 ## Environments
 ES6
@@ -15,12 +16,14 @@ I have used jest for my test suite and nodemon so I can watch my test suite.
 In the console download dependencies by writing in your CLI ```yarn``` or ```npm install```
 
 ## Operating Instructions
-start the cart by writing ```node index '[base price json arg] [cart json arg]'``` 
+Ttart the cart by writing ```node index '[base price json arg] [cart json arg]'``` 
+There are two mock files that have been created so if you write ```node index ./data/basePrices.json ./data/cart9363.json``` you will automatically be able to see that yes indeed my code is WORKING!
 
 
 ## Testing Instructions
 Jest test suite
 to start test suite ```yarn test```
+The test suite is running from the data folder that is connected to my project.
 
 ## Overview
 I have been coding every day since I finished EDA, but I have mainly been focusing on the front end, when I recieved the assignment I was quite excited to move into a territory I felt less familar with, I have spent a lot of time just reading and learning, to not just finish the task at hand but to explore and learn.
@@ -36,14 +39,16 @@ Once I felt like I had the basic functions working I passed it onto a friend And
 This has been quite a tough challenge, and I am learning tools and techniques I haven't used or had much experience with so it's been a massive learning experience, and really rewarding! I now am pretty good at reduce functions!
 
 ## Stuff to work on
-* I would love to figure out how to do mock tests in jest and want to test a function that calls another page.
+* Do some mock tests in jest to test a function that calls another page.
 * There is an if/else function in the  I think could be refactored, would be nice to figure out how to make that one function.
+* That function is also relying on options name, I need to instead find the index and use the first option first, second option second without using names.
 * I know I need to work on the naming of my functions - this is something I need to work on long term.
 * I have declared a lot of variables in some of the functions - would love figure out a cleaner way of doing this - it makes my function quite big..
 * combineOne() - combineTwo() and combineWithNoOptions() could be one function.
 * Because I was learning how to do the basePriceObj I didn't know what my tree was going to look like, so I did not start with tests, if I had more time I would re do this (and might still after anyway) in TDD - I started this project with TDD but with that file I did not actually know what I was looking for so I found it tough.
 * I would love to get a bunch of more things to test - I did the main functions but I know that things within the functions can be tested, which would be overall benificial.
 * Would also love to figure out how to name my progam so you don't have to go "node index"
+* I am also learning Ruby at the moment, so redoing this code in Ruby (when I have a better grip on Ruby) could be a really great exercise!
 
 ## Contributing
 Code never fails because of the code, it fails because of the people. I am a strong believer in team work, and how the strength of a person is based on the strength of the community.
@@ -61,6 +66,9 @@ Ross was a tutor of mine at EDA* and is now a bit of a mentor.
  
 #### Jess Draper
 Jess was apart of my Cohort at EDA*, we are both searching for work and have a project we want to create together, we have been giving each other a lot of emotional support over the last couple of weeks and she has helped by being in my corner and being super supportive! (we were also both working on tech assignments at the same time which was great!, we were both able to be super empathetic)
+
+#### Random internet person 
+So I am hooked into a code-help-desk slack page, and I did ask some questions about little bits I was stuck on and was pushed to rewrite the code using .reduce functions! and thanks to this person my code is so much nicer and functional.
 
 *Enspiral Dev Acadamy https://devacademy.co.nz/
 *loomio https://www.loomio.org/
