@@ -16,8 +16,8 @@ function findMatch(base, cart) {
     let itemName = items['product-type']
     let itemSize = items.options.size
     let itemColour = items.options.colour
-    let itemFind = (itemSize + (itemColour ? itemColour : ''))
-    let basePrice = base[itemName][itemFind]
+    let itemFind = ((itemSize ? itemSize : '') + (itemColour ? itemColour : ''))
+    let basePrice = (base[itemName][itemFind] ? base[itemName][itemFind] : '')
     itemToFind.push(base[itemName][itemFind])
     cartPrice = base[itemName][itemFind]
   })
@@ -29,11 +29,12 @@ function add(a, b) {
 }
 function totalCart(items, cart) {
   var individualPrice = []
+  var totalArray = []
   items.forEach((productCost, i) => {
     let artistMarkup = cart[i]['artist-markup'] / 100
     individualPrice.push((productCost + Math.round(artistMarkup)) * cart[i].quantity)
-    var totalArray = individualPrice.reduce(add, 0)
-    console.log(totalArray)
+    totalArray = individualPrice.reduce(add, 0)
     return totalArray
   })
+  console.log(totalArray)
 }
