@@ -32,43 +32,45 @@ function simplifyingObjects(output) {
 function fillObjects(data, object) {
   let options = data['options']
   let obj = object
+
   data.forEach(item => {
     let colour = item.options.colour
     let size = item.options.size
     let price = item['base-price']
+
     if (Object.keys(item.options).length === 2){
       let arr = combineTwo(data, price, size, colour)
-      obj.hoodie.push(arr)
+      obj[item['product-type']].push(arr)
     } else if (Object.keys(item.options).length === 1){
       let arr = combineOne(data, price, size)
-      obj.sticker.push(arr)
+      obj[item['product-type']].push(arr)
     } else {
       let arr = noOptions(data, price)
-      obj.leggings.push(arr)
+      obj[item['product-type']].push(arr)
     }
   })
 }
 
 function combineTwo(data, basePrice, array1, array2) {
-  let priceObjectHoodie = {}
+  let obj = {}
     array1.forEach((element1) => {
       array2.forEach((element2) => {
-        priceObjectHoodie[element1 + element2] = basePrice
+        obj[element1 + element2] = basePrice
       })
     })
-    return priceObjectHoodie
+    return obj
 }
 
 function combineOne(data, basePrice, array1) {
-  let priceObjectSticker = {}
+  let obj = {}
     array1.forEach((element1) => {
-        priceObjectSticker[element1] = basePrice;
+        obj[element1] = basePrice;
       })
-    return priceObjectSticker
+    return obj
 }
 
 function noOptions(data, basePrice) {
-  let priceObjectSticker = {}
-        priceObjectSticker[""] = basePrice;
-    return priceObjectSticker
+  let obj = {}
+        obj[""] = basePrice;
+    return obj
 }
