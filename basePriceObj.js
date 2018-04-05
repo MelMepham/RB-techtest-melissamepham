@@ -15,21 +15,18 @@ function priceObject(data) {
     return typesWithPrices
   }, {})
   fillObjects(data, output)
-  const hoodie = output.hoodie.reduce((hoodieObject, value) => {
-    return {...hoodieObject, ...value}
-  }, {})
-  const sticker = output.sticker.reduce((stickerObject, value) => {
-    return {...stickerObject, ...value}
-  }, {})
-  const leggings = output.leggings.reduce((leggingsObject, value) => {
-    return {...leggingsObject, ...value}
-  }, {})
-
-  output.hoodie = hoodie
-  output.sticker = sticker
-  output.leggings = leggings
-
+  simplifyingObjects(output)
+  console.log(output)
 return output
+}
+
+function simplifyingObjects(output) {
+  var name = ['hoodie', 'sticker', 'leggings']
+  name.forEach((item, i) => {
+    output[item] = output[item].reduce((object, value) => {
+      return {...object, ...value}
+    },{})
+  })
 }
 
 function fillObjects(data, object) {
