@@ -1,7 +1,11 @@
 const fs = require('fs')
 
 module.exports = {
-  priceObject: priceObject
+  priceObject,
+  fillObjects,
+  combineTwo,
+  combineOne,
+  noOptions
 }
 
 function priceObject(data) {

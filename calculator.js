@@ -4,7 +4,6 @@ const basePriceObj = require('./basePriceObj.js')
 module.exports = {
   calculator: calculator,
   findMatch: findMatch,
-  add: add,
   totalCart: totalCart
 }
 
@@ -24,21 +23,17 @@ function findMatch(base, cart) {
     itemToFind.push(base[itemName][itemFind])
     cartPrice = base[itemName][itemFind]
   })
-  return itemToFind
   totalCart(itemToFind, cart)
-}
-
-function add(a, b) {
-    return a + b;
+  return itemToFind
 }
 
 function totalCart(items, cart) {
+  var add = (a, b) => a + b;
   var individualPrice = []
-  var totalArray = []
   items.forEach((productCost, i) => {
     let artistMarkup = cart[i]['artist-markup'] / 100
     individualPrice.push((productCost + Math.round(artistMarkup)) * cart[i].quantity)
-    totalArray = individualPrice.reduce(add, 0)
-    return totalArray
   })
+  let totalArray = individualPrice.reduce(add, 0)
+  return totalArray
 }

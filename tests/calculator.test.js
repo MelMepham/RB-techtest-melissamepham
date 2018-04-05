@@ -26,16 +26,21 @@ let base =  { hoodie:
 
 let cart = JSON.parse(fs.readFileSync('./data/cart.json', 'utf8'))
 
+// test('calculator imports the base object', function () {
+//     const testCalculator = calculator.calculator(base)
+//     let basePrice = base
+//     console.log(itemToFind)
+//     expect(calculator).toBe(object)
+//   })
 
 test('calculator finds base prices', function () {
     const itemToFind = calculator.findMatch(base, cart)
-    console.log(itemToFind)
     expect(itemToFind).toEqual([ 4368, 5000 ])
   })
 
-test('add function works', function () {
-  var a = 3
-  var b = 4
-  const total = calculator.add(a, b)
-  expect(total).toBe(7)
-})
+
+test('totalCart adds up the cart.', function () {
+    let items = [ 4368, 5000 ]
+    const totalArray = calculator.totalCart(items, cart)
+    expect(totalArray).toBe(13736)
+  })
