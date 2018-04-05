@@ -1,4 +1,5 @@
 # RedBubble I Love You <3 <3
+### Thanks for the challenge!
 
 ## Title & Description
 Hello RedBubble team, I have created a CLI program that takes two arguments and will calculate the amount of items and the price of your cart.
