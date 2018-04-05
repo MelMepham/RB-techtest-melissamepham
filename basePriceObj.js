@@ -1,7 +1,11 @@
 const fs = require('fs')
 
 module.exports = {
-  priceObject: priceObject
+  priceObject,
+  fillObjects,
+  combineTwo,
+  combineOne,
+  noOptions
 }
 
 function priceObject(data) {
@@ -68,6 +72,6 @@ function combineOne(data, basePrice, array1) {
 
 function noOptions(data, basePrice) {
   let priceObjectSticker = {}
-        priceObjectSticker["one size fits all"] = basePrice;
+        priceObjectSticker[""] = basePrice;
     return priceObjectSticker
 }
