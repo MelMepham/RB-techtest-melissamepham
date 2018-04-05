@@ -6,8 +6,6 @@ module.exports = {
   findMatch: findMatch,
   add: add,
   totalCart: totalCart
-
-
 }
 
 function calculator(base, cart) {
@@ -26,6 +24,7 @@ function findMatch(base, cart) {
     itemToFind.push(base[itemName][itemFind])
     cartPrice = base[itemName][itemFind]
   })
+  return itemToFind
   totalCart(itemToFind, cart)
 }
 
@@ -42,5 +41,4 @@ function totalCart(items, cart) {
     totalArray = individualPrice.reduce(add, 0)
     return totalArray
   })
-  console.log(totalArray)
 }
