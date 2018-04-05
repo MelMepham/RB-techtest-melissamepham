@@ -15,7 +15,7 @@ I have used jest for my test suite and nodemon so I can watch my test suite.
 In the console download dependencies by writing in your CLI ```yarn``` or ```npm install```
 
 ## Operating Instructions
-start the cart by writing ```node index '[cart json arg] [base price json arg]'``` 
+start the cart by writing ```node index '[base price json arg] [cart json arg]'``` 
 
 
 ## Testing Instructions
