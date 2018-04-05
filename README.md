@@ -15,7 +15,7 @@ I have used jest for my test suite and nodemon so I can watch my test suite.
 In the console download dependencies by writing in your CLI ```yarn``` or ```npm install```
 
 ## Operating Instructions
-start the cart by writing ```node index '[cart json arg] [base price json arg]'``` 
+start the cart by writing ```node index '[base price json arg] [cart json arg]'``` 
 
 
 ## Testing Instructions
@@ -43,6 +43,7 @@ This has been quite a tough challenge, and I am learning tools and techniques I 
 * combineOne() - combineTwo() and combineWithNoOptions() could be one function.
 * Because I was learning how to do the basePriceObj I didn't know what my tree was going to look like, so I did not start with tests, if I had more time I would re do this (and might still after anyway) in TDD - I started this project with TDD but with that file I did not actually know what I was looking for so I found it tough.
 * I would love to get a bunch of more things to test - I did the main functions but I know that things within the functions can be tested, which would be overall benificial.
+* Would also love to figure out how to name my progam so you don't have to go "node index"
 
 ## Contributing
 Code never fails because of the code, it fails because of the people. I am a strong believer in team work, and how the strength of a person is based on the strength of the community.
