@@ -40,16 +40,17 @@ Once I felt like I had the basic functions working I passed it onto a friend And
 This has been quite a tough challenge, and I am learning tools and techniques I haven't used or had much experience with so it's been a massive learning experience, and really rewarding! I now am pretty good at reduce functions!
 
 ## Stuff to work on
-* Do some mock tests in jest to test a function that calls another page.
-* There is an if/else function in the  I think could be refactored, would be nice to figure out how to make that one function.
-* That function is also relying on options name, I need to instead find the index and use the first option first, second option second without using names.
-* I know I need to work on the naming of my functions - this is something I need to work on long term.
-* I have declared a lot of variables in some of the functions - would love figure out a cleaner way of doing this - it makes my function quite big..
-* combineOne() - combineTwo() and combineWithNoOptions() could be one function.
-* Because I was learning how to do the basePriceObj I didn't know what my tree was going to look like, so I did not start with tests, if I had more time I would re do this (and might still after anyway) in TDD - I started this project with TDD but with that file I did not actually know what I was looking for so I found it tough.
-* I would love to get a bunch of more things to test - I did the main functions but I know that things within the functions can be tested, which would be overall beneficial.
-* Would also love to figure out how to name my program so you don't have to go "node index"
-* I am also learning Ruby at the moment, so redoing this code in Ruby (when I have a better grip on Ruby) could be a really great exercise!
+[X] Do some mock tests in jest to test a function that calls another page.
+[ ] There is an if/else function in the  I think could be refactored, would be nice to figure out how to make that one function.
+[ ] That function is also relying on options name, I need to instead find the index and use the first option first, second option second without using names.
+[ ] I know I need to work on the naming of my functions - this is something I need to work on long term.
+[ ] I have declared a lot of variables in some of the functions - would love figure out a cleaner way of doing this - it makes my function quite big..
+[ ] combineOne() - combineTwo() and combineWithNoOptions() could be one function.
+[ ] Because I was learning how to do the basePriceObj I didn't know what my tree was going to look like, so I did not start with tests, if I had more time I would re do this (and might still after anyway) in TDD - I started this project with TDD but with that file I did not actually know what I was looking for so I found it tough.
+[ ] I would love to get a bunch of more things to test - I did the main functions but I know that things within the functions can be tested, which would be overall beneficial.
+[ ] Would also love to figure out how to name my program so you don't have to go "node index"
+[ ] I am also learning Ruby at the moment, so redoing this code in Ruby (when I have a better grip on Ruby) could be a really great exercise!
+[ ] I have created a dataTest file - would like to link that to the test suite instead of hardcoding that data
 
 ## Contributing
 Code never fails because of the code, it fails because of the people. I am a strong believer in teamwork, and how the strength of a person is based on the strength of the community.
