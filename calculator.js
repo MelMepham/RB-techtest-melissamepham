@@ -2,7 +2,12 @@ const fs = require('fs')
 const basePriceObj = require('./basePriceObj.js')
 
 module.exports = {
-  calculator: calculator
+  calculator: calculator,
+  findMatch: findMatch,
+  add: add,
+  totalCart: totalCart
+
+
 }
 
 function calculator(base, cart) {
@@ -11,7 +16,7 @@ function calculator(base, cart) {
 }
 
 function findMatch(base, cart) {
-  let = itemToFind = []
+  let itemToFind = []
   cart.forEach(items => {
     let itemName = items['product-type']
     let itemSize = items.options.size
@@ -27,6 +32,7 @@ function findMatch(base, cart) {
 function add(a, b) {
     return a + b;
 }
+
 function totalCart(items, cart) {
   var individualPrice = []
   var totalArray = []
