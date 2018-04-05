@@ -5,7 +5,7 @@ module.exports = {
   fillObjects,
   combineTwo,
   combineOne,
-  noOptions
+  combineWithNoOptions
 }
 
 function priceObject(data) {
@@ -16,7 +16,6 @@ function priceObject(data) {
   }, {})
   fillObjects(data, output)
   simplifyingObjects(output)
-  console.log(output)
 return output
 }
 

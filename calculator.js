@@ -35,5 +35,6 @@ function totalCart(items, cart) {
     individualPrice.push((productCost + Math.round(artistMarkup)) * cart[i].quantity)
   })
   let totalArray = individualPrice.reduce(add, 0)
+  console.log("cart total: ", totalArray)
   return totalArray
 }
