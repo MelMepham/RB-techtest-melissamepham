@@ -4,7 +4,7 @@ const basePriceObj = require('./basePriceObj.js')
 module.exports = {
   calculator,
   findMatch,
-  totalCart
+  totalCart,
 }
 
 function calculator(base, cart) {
@@ -20,7 +20,6 @@ function findMatch(base, cart) {
     let itemSize = items.options.size
     let itemColour = items.options.colour
     let itemFind = ((itemSize ? itemSize : '') + (itemColour ? itemColour : ''))
-    let basePrice = (base[itemName][itemFind] ? base[itemName][itemFind] : '')
     itemToFind.push(base[itemName][itemFind])
     cartPrice = base[itemName][itemFind]
   })

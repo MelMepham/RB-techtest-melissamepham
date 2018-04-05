@@ -1,4 +1,4 @@
-let base =
+let newObject =
   { hoodie:
     {   smallwhite: 3800,
         smalldark: 3800,
@@ -20,3 +20,5 @@ let base =
   leggings:
     {   '': 5000 }
   }
+
+  module.exports = {newObject}
