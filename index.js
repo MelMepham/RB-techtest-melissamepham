@@ -1,6 +1,7 @@
-var fs = require('fs')
+const fs = require('fs')
 
-var calculator = require('./calculator')
+let basePriceObj = require('./basePriceObj.js')
+let calculator = require('./calculator.js')
 
 let base = JSON.parse(fs.readFileSync('./data/basePrices.json', 'utf8'))
 let cart = JSON.parse(fs.readFileSync('./data/cart.json', 'utf8'))
