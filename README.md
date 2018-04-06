@@ -37,7 +37,12 @@ Once that was working I decided to automate it a little more for myself and add 
 Of course, all of the different product-types have different options, things like colour is needed for the hoodies, but not with the stickers, so I figured out how to match the required fields, and added some pluralization into the total function for a better user experience. 
 
 Once I felt like I had the basic functions working I passed it onto a friend Andrew and he peer reviewed it for me. After talking with Andrew I discovered I was thinking about the problem in a way that wasn't going to meet the requirements of the task. So I needed to go back and rewrite my code, after a lot of trial and error, youtubing and talking with friends and I managed to get my code working to allow the base-price input to be turned into an object that has stabilized the price calculation time. 
-This has been quite a tough challenge, and I am learning tools and techniques I haven't used or had much experience with so it's been a massive learning experience, and really rewarding! I now am pretty good at reduce functions!
+
+This has been quite a tough challenge, and I am really proud of myself for what I have achieved. I have been coding for about 4 months, and I feel (after working my way through this challenge) equipped to be solving real world problems. I know this code is not perfect, and are deffinately things I could work on, some bits shouldn't be hard coded, and the testing suite could be better (it does however hit 100% of the code) and I know I have so much more to learn. If this was the challenge I was given for the tech test I am excited at the idea of how much I will be pushed and how much I cwill learn if I do join your team at RedBubble. 
+
+I would love feedback on the code, and hints or ideas on how I could make it better! If I do join your team I know you wouldn't have space for me until July/August and I plan to keep coding and would love your help to learn your stack and better equip myself for when the time comes.
+
+Thank you SO MUCH!
 
 ## Stuff to work on
 * [X] Do some mock tests in jest to test a function that calls another page.
