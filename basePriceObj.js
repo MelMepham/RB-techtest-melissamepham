@@ -26,12 +26,10 @@ function priceObject(data) {
 function fillObjects(data, object) {
   let options = data['options']
   let obj = object
-
   data.forEach((item) => {
     let size = item.options.size
     let colour = item.options.colour
     let price = item['base-price']
-
     if (Object.keys(item.options).length === 2){
       let arr = combineTwo(data, price, size, colour)
       obj[item['product-type']].push(arr)
@@ -47,13 +45,16 @@ return obj
 }
 
 function simplifyingObjects(output) {
-  var name = ['hoodie', 'sticker', 'leggings']
-  name.forEach((item, i) => {
+  var name = Object.keys(output)
+  name.forEach(item => {
+    var newName = output[item]
     output[item] = output[item].reduce((object, value) => {
-      return {...object, ...value}
-    },{})
+    return {...object, ...value}
+    }, {})
   })
+  return output
 }
+
 function combineTwo(data, basePrice, array1, array2) {
   let obj = {}
     array1.forEach((element1) => {
