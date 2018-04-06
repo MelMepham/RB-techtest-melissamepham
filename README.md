@@ -3,7 +3,7 @@
 It's been such a great learning experience I secretly want to go to all the tech companies and ask them to send me their tech homework just so I have some dynamic challenges to solve!
 
 ## Title & Description
-Hello RedBubble team, I have created for you a CLI program that takes two arguments, the first is a baseCart.json, my program with consume this and create an object that can be referenced, the cart object as the second argument it will go into the new object I have created to find the items in question and calculate up the cart with a lovely bit of math that was kindly given to me by your team. 
+Hello RedBubble team, I have created for you a CLI program that takes two arguments, the first is a baseCart.json, my program with consume this and create an object that can be referenced, the cart object is the second argument and this will go into the new object I have created to find the items in question and calculate up the cart with a lovely bit of math that was kindly given to me by your team. 
 
 ## Environments
 ES6
